@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jhales Santiago - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #00bfff;
+    }
+.custom-font {
+  font-family: 'Roboto Slab', serif;
+  color: #f5f5f5;
+  font-size: 1.1em;
+}
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      background-color: #2a2a2a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+
+    .profile-image-container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: #00bfff;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .circle-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid transparent;
+      border-top-color: #00bfff;
+      border-right-color: #00bfff;
+      border-radius: 50%;
+      animation: rotateCircle 4s linear infinite;
+    }
+
+    @keyframes rotateCircle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .info-section {
+      text-align: center;
+      flex-grow: 1;
+      margin: 20px;
+    }
+
+    .info-section h1 {
+      font-size: 3em;
+      margin-bottom: 5px;
+      color: #00bfff;
+    }
+
+    .info-section p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #f0f0f0;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00bfff;
+      animation: blink-caret 0.75s step-end infinite;
+      color: #00bfff;
+      font-weight: bold;
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00bfff; }
+    }
+
+    .bio-text {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #00bfff;
+      font-size: 1.8em;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #00bfff;
+    }
+
+    .download-cv-btn {
+      display: inline-block;
+      background-color: #00bfff;
+      color: #1a1a1a;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 25px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-cv-btn:hover {
+      background-color: #00bfff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .info-section {
+        text-align: center;
+      }
+
+      .social-icons {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="info-section">
+      <h1>Jhales Santiago</h1>
+      <p>I'm a <span class="highlight"><span id="typewriter" class="typewriter"></span></span></p>
+      <p class="bio-text custom-font">
+  Jhales Arlick Arizo Santiago from Quezon City, 3rd Year From Bestlink College of the Philippines major is IM; I did this portfolio just to place it on my Tap Me product sample given to Mr. Gerald Dela Cruz LPT.
+</p>
+      <div class="social-icons">
+        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+      <a href="#" class="download-cv-btn" download>Download CV</a>
+    </div>
+    <div class="profile-section">
+      <div class="profile-image-container">
+        <img src="fia.jpg" alt="Jhales Santiago" class="profile-image" />
+        <div class="circle-animation"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const words = ["Programmer", "Static and Dynamic Creator"];
+    let part = 0;
+    let i = 0;
+    let typewriter = document.getElementById("typewriter");
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[part];
+      const currentText = isDeleting
+        ? currentWord.substring(0, i--)
+        : currentWord.substring(0, i++);
+
+      typewriter.textContent = currentText;
+
+      if (!isDeleting && i === currentWord.length + 1) {
+        setTimeout(() => {
+          isDeleting = true;
+          type();
+        }, 1200);
+        return;
+      }
+
+      if (isDeleting && i === 0) {
+        isDeleting = false;
+        part = (part + 1) % words.length;
+      }
+
+      const speed = isDeleting ? 50 : 100;
+      setTimeout(type, speed);
+    }
+
+    type();
+  </script>
+</body>
+</html>
