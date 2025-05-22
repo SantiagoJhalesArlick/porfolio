@@ -19,11 +19,12 @@
       min-height: 100vh;
       color: #00bfff;
     }
-.custom-font {
-  font-family: 'Roboto Slab', serif;
-  color: #f5f5f5;
-  font-size: 1.1em;
-}
+
+    .custom-font {
+      font-family: 'Roboto Slab', serif;
+      color: #f5f5f5;
+      font-size: 1.1em;
+    }
 
     .container {
       width: 90%;
@@ -53,7 +54,6 @@
       border-radius: 50%;
       overflow: hidden;
       margin-bottom: 20px;
-      box-shadow: #00bfff;
     }
 
     .profile-image {
@@ -122,15 +122,22 @@
       margin-bottom: 20px;
     }
 
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
     .social-icons a {
       color: #00bfff;
       font-size: 1.8em;
-      margin: 0 15px;
       transition: color 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #00bfff;
+      color: #ffffff;
     }
 
     .download-cv-btn {
@@ -146,45 +153,67 @@
     }
 
     .download-cv-btn:hover {
-      background-color: #00bfff;
+      background-color: #009acd;
     }
 
+    /* ✅ Mobile Responsive */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
         align-items: center;
+        padding: 20px;
+      }
+
+      .profile-image-container {
+        width: 180px;
+        height: 180px;
       }
 
       .info-section {
-        text-align: center;
+        margin: 0;
+        padding: 0 10px;
       }
 
-      .social-icons {
-        margin-top: 20px;
+      .info-section h1 {
+        font-size: 2.2em;
+      }
+
+      .info-section p {
+        font-size: 1em;
+      }
+
+      .download-cv-btn {
+        font-size: 0.95em;
+        padding: 10px 20px;
+      }
+
+      .social-icons a {
+        font-size: 1.6em;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="info-section">
-      <h1>Jhales Santiago</h1>
-      <p>I'm a <span class="highlight"><span id="typewriter" class="typewriter"></span></span></p>
-      <p class="bio-text custom-font">
-  Jhales Arlick Arizo Santiago from Quezon City, 3rd Year From Bestlink College of the Philippines major is IM; I did this portfolio just to place it on my Tap Me product sample given to Mr. Gerald Dela Cruz LPT.
-</p>
-      <div class="social-icons">
-        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      </div>
-      <a href="#" class="download-cv-btn" download>Download CV</a>
-    </div>
     <div class="profile-section">
       <div class="profile-image-container">
         <img src="fia.jpg" alt="Jhales Santiago" class="profile-image" />
         <div class="circle-animation"></div>
       </div>
+    </div>
+
+    <div class="info-section">
+      <h1>Jhales Santiago</h1>
+      <p>I'm a <span class="highlight"><span id="typewriter" class="typewriter"></span></span></p>
+      <p class="bio-text custom-font">
+        Jhales Arlick Arizo Santiago from Quezon City, 3rd Year From Bestlink College of the Philippines major is IM; I did this portfolio just to place it on my Tap Me product sample given to Mr. Gerald Dela Cruz LPT.
+      </p>
+      <div class="social-icons">
+        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/jhales016" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+      <a href="#" class="download-cv-btn" download>Download CV</a>
     </div>
   </div>
 
